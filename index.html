@@ -3,49 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Farming Assistant</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <title>Interactive Map</title>
+    
+    <!-- Подключение стилей Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <!-- Ваш файл стилей -->
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Farming Assistant</h1>
-        <nav>
+    <!-- Бургер-меню -->
+    <div id="menu-icon" onclick="toggleMenu()">&#9776;</div>
+
+    <!-- Боковое меню -->
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact us</a>
+    </div>
+
+    <!-- Контейнер для карты -->
+    <div id="map" style="height: 100vh; width: 100vw;"></div>
+
+    <!-- Pop-up карточка с информацией -->
+    <div id="popup-container" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <h2 id="region-name">Region Name</h2>
+            <h3 id="total-score">Total Score: 98/100</h3>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li>Temperature Index: <span id="temperature">N/A</span></li>
+                <li>AQI: <span id="aqi">N/A</span></li>
+                <li>Pests Activity: <span id="pests">N/A</span></li>
+                <li>Mean Daylight Time: <span id="daylight">N/A</span></li>
+                <li>Humidity: <span id="humidity">N/A</span></li>
+                <li>Soil Quality: <span id="soil">N/A</span></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </div>
 
-    <section id="about">
-        <h2>About Our Tool</h2>
-        <p>This tool helps farmers find the best location to grow crops based on various factors like soil, water, and climate.</p>
-    </section>
+    <!-- Подключение Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
-    <section id="features">
-        <h2>Key Features</h2>
-        <ul>
-            <li>Soil and weather data analysis</li>
-            <li>Water resource recommendations</li>
-            <li>Geopolitical risk insights</li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Your name">
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Your email">
-
-            <input type="submit" value="Send">
-        </form>
-    </section>
-
-    <script src="static/js/script.js"></script>
+    <!-- Ваш файл скриптов -->
+    <script src="/static/js/script.js"></script>
 </body>
 </html>

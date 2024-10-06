@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    
+    <!-- Подключение стилей Leaflet (если требуется) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <!-- Ваш файл стилей -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Бургер-меню -->
+    <div id="menu-icon" onclick="toggleMenu()">&#9776;</div>
+
+    <!-- Боковое меню -->
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact us</a>
+    </div>
+
+    <!-- Основной контент страницы "About Us" -->
+    <div class="content">
+        <h1>About Us</h1>
+        <p>
+            Welcome to our interactive map project! Our team is dedicated to providing accurate data about various regions across the United States.
+        </p>
+        <p>
+            This project aims to help users explore different regions based on various environmental parameters, including temperature, air quality, pests activity, and more.
+        </p>
+        <p>
+            Our mission is to offer users a convenient and easy-to-use tool to make informed decisions, whether they are farmers, researchers, or enthusiasts.
+        </p>
+        <p>
+            We hope you enjoy using our platform, and we’re always here to help with any questions or suggestions you might have!
+        </p>
+    </div>
+
+    <!-- Подключение JavaScript для управления меню -->
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
