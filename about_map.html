@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Map - Formulas</title>
+    
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <!-- Бургер-меню -->
+    <div id="menu-icon" onclick="toggleMenu()">&#9776;</div>
+
+    <!-- Боковое меню -->
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <a href="index.html">Map</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact us</a>
+    </div>
+
+    <div class="content">
+        <h1>About the Map - Environmental Formulas</h1>
+        
+        <section>
+            <h2>1. Soil Quality Index (SQI)</h2>
+            <p>
+                The <strong>Soil Quality Index (SQI)</strong> is calculated based on various soil properties such as pH, organic matter, moisture content, and nutrient levels. The general formula for SQI is:
+            </p>
+            <p><strong>Formula:</strong></p>
+            <pre>
+                SQI = ((P₁×W₁) + (P₂×W₂) + ... + (Pₙ×Wₙ)) / W_total
+            </pre>
+            <p><strong>Where:</strong></p>
+            <ul>
+                <li><strong>Pᵢ:</strong> Value of the i-th soil property (e.g., pH, organic matter, moisture content, nutrient levels)</li>
+                <li><strong>Wᵢ:</strong> Weighting factor for the i-th soil property (reflects the importance of each property in assessing soil quality)</li>
+                <li><strong>n:</strong> Total number of soil properties considered</li>
+                <li><strong>W_total:</strong> Sum of all weighting factors (W₁ + W₂ + ... + Wₙ)</li>
+            </ul>
+            <p><strong>Abbreviation:</strong> SQI stands for <strong>Soil Quality Index</strong>.</p>
+        </section>
+        
+        <section>
+            <h2>2. Pest Activity Index (PAI)</h2>
+            <p>
+                The <strong>Pest Activity Index (PAI)</strong> evaluates the pest count in a specific area over time. This formula helps in assessing how pest activity affects crop or soil health.
+            </p>
+            <p><strong>Formula:</strong></p>
+            <pre>
+                PAI = Total Pest Count / (Area × Time Factor)
+            </pre>
+            <p><strong>Where:</strong></p>
+            <ul>
+                <li><strong>Total Pest Count:</strong> Cumulative count of pests observed during the monitoring period</li>
+                <li><strong>Area:</strong> Size of the area in square units (e.g., square feet or square meters)</li>
+                <li><strong>Time Factor:</strong> A multiplier based on the length of the observation period (e.g., weekly monitoring could have a factor of 4 for a month)</li>
+            </ul>
+            <p><strong>Abbreviation:</strong> PAI stands for <strong>Pest Activity Index</strong>.</p>
+        </section>
+
+        <section>
+            <h2>3. Air Quality Index (AQI)</h2>
+            <p>
+                The <strong>Air Quality Index (AQI)</strong> is calculated to assess the quality of the air in a specific region, based on pollutant concentrations.
+            </p>
+            <p><strong>Formula:</strong></p>
+            <pre>
+                I = ((C - C_low) / (C_high - C_low)) × (I_high - I_low) + I_low
+            </pre>
+            <p><strong>Where:</strong></p>
+            <ul>
+                <li><strong>I:</strong> AQI value for the pollutant</li>
+                <li><strong>C:</strong> Pollutant concentration</li>
+                <li><strong>C_low, C_high:</strong> Concentration breakpoints for lower and higher AQI categories</li>
+                <li><strong>I_low, I_high:</strong> AQI values corresponding to those breakpoints</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Temperature Suitability Formula (TI)</h2>
+            <p>
+                The <strong>Temperature Index (TI)</strong> formula calculates the suitability of a region's temperature for crop growth or similar metrics, based on optimal temperature ranges.
+            </p>
+            <p><strong>Formula:</strong></p>
+            <pre>
+                S = 1 - ((T_opt, max - T_opt, min) / (T_max - T_opt, min)) × ((A_opt - A_year) / A_opt) × ((T_opt, max - T_opt, min) / (T_avg, year - T_opt, avg))
+            </pre>
+            <p><strong>Where:</strong></p>
+            <ul>
+                <li><strong>S:</strong> Calculated suitability score</li>
+                <li><strong>T_max:</strong> Maximum temperature for the given period</li>
+                <li><strong>T_opt, min:</strong> Minimum optimal temperature for the crop</li>
+                <li><strong>T_opt, max:</strong> Maximum optimal temperature for the crop</li>
+                <li><strong>A_year:</strong> Annual crop-related value (yield, growth rate, etc.)</li>
+                <li><strong>A_opt:</strong> Optimal annual value for the crop</li>
+                <li><strong>T_avg, year:</strong> Average temperature for the year</li>
+                <li><strong>T_opt, avg:</strong> Average optimal temperature for the crop</li>
+            </ul>
+            <p><strong>Abbreviation:</strong> TI stands for <strong>Temperature Index</strong>.</p>
+        </section>
+    </div>
+
+    <!-- Подключение скриптов -->
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

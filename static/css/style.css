@@ -1,13 +1,9 @@
-/* Общие стили */
+/* Общие стили для темной темы */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-}
-
-/* Карта */
-#map {
-    height: 100vh;
-    width: 100vw;
+    background-color: #111; /* Темный фон */
+    color: #f1f1f1; /* Светлый текст */
 }
 
 /* Бургер-меню */
@@ -61,23 +57,53 @@ body {
     margin-left: 50px;
 }
 
-/* Поп-ап карточка */
+
+
+/* Основной контент */
+.content {
+    margin: 50px;
+    color: #f1f1f1; /* Светлый текст */
+}
+
+.content h1 {
+    text-align: center;
+    color: #ffffff; /* Белый заголовок */
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Скрытый pop-up */
 .popup {
-    display: none;
     position: fixed;
     z-index: 1001;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.8); /* Уменьшенный размер */
     background-color: #222;
     padding: 30px;
-    border-radius: 0;
+    border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     max-width: 500px;
     width: 90%;
     max-height: 80vh;
     overflow-y: auto;
+    opacity: 0; /* Начальная непрозрачность */
+    visibility: hidden; /* Скрытый элемент */
+    transition: opacity 2s ease-out, transform 2s ease-out; /* Анимация */
 }
+
+/* Видимый pop-up */
+.popup.show {
+    opacity: 1; /* Полная непрозрачность */
+    transform: translate(-50%, -50%) scale(1); /* Масштаб 100% */
+    visibility: visible; /* Элемент видим */
+}
+
+
 
 .popup-content {
     text-align: center;
@@ -107,31 +133,30 @@ body {
     color: #f1f1f1;
 }
 
-/* Адаптивные стили для мобильных устройств */
-@media (max-width: 768px) {
-    .popup {
-        max-width: 90vw;
-        padding: 20px;
-    }
-
-    #map {
-        height: 80vh;
-    }
-}
-
-/* Основной контент для страницы "About Us" */
+/* Specific styles for the "About Map" page */
 .content {
     margin: 50px;
     color: #f1f1f1;
 }
 
-.content h1 {
+.content h1, .content h2 {
     text-align: center;
     color: #ffffff;
 }
 
-.content p {
+.content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.content ul li {
+    margin: 10px 0;
     font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+}
+
+code {
+    background-color: #333;
+    color: #f1f1f1;
+    padding: 2px 5px;
+    border-radius: 3px;
 }
